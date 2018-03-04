@@ -2,7 +2,7 @@
   "use strict";
   var App = window.App || {};
 
-  function Datastore() {
+  function DataStore() {
     this.data = {};
   }
 
@@ -16,11 +16,11 @@
 
   DataStore.prototype.getAll = function () {
     return this.data;
-  }
+  };
 
   DataStore.prototype.remove = function (key) {
     delete this.data[key];
-  }
+  };
 
   App.DataStore = DataStore;
   window.App = App;
