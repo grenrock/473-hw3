@@ -1,4 +1,4 @@
-(function (window) {
+(function(window) {
   "use strict";
 
   var App = window.App || {};
@@ -9,21 +9,21 @@
       throw new Error("No selector provided");
     }
 
-    CheckList.prototype.addClickHandler = function (fn) {
-      this.$element.on("click", "input", function (event) {
+    CheckList.prototype.addClickHandler = function(fn) {
+      this.$element.on("click", "input", function(event) {
         var email = event.target.value;
         this.removeRow(email);
         fn(email);
       }.bind(this));
     };
 
-    CheckList.prototype.addRow = function (coffeeOrder) {
+    CheckList.prototype.addRow = function(coffeeOrder) {
       this.removeRow(coffeeOrder.emailAddress);
       var rowElement = new Row(coffeeOrder);
       this.$element.append(rowElement.$element);
     };
 
-    CheckList.prototype.removeRow = function (email) {
+    CheckList.prototype.removeRow = function(email) {
       this.$element
         .find("[value='" + email + "']")
         .closest("data-coffee-order='checkbox']")

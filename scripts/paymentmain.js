@@ -1,4 +1,4 @@
-(function (window) {
+(function(window) {
   "use strict";
   var FORM_SELECTOR = "[data-coffee-order = 'form']";
   var App = window.App;
@@ -8,7 +8,7 @@
   var myTruck = new Truck("ncc-1701", new DataStore());
   window.myTruck = myTruck;
   var formHandler = new FormHandler(FORM_SELECTOR);
-  formHandler.addSubmitHandler(function (data) {
+  formHandler.addSubmitHandler(function(data) {
     myTruck.createOrder.call(myTruck, data);
   });
 
